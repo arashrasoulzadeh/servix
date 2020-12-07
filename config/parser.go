@@ -8,6 +8,7 @@ import (
 )
 
 type ConfigFile struct {
+	Redis  Redis    `yaml:"redis"`
 	Config []Config `yaml:"config"`
 }
 type Config struct {
@@ -15,6 +16,12 @@ type Config struct {
 	Server string `yaml:"server"`
 	Port   int    `yaml:"port"`
 	Index  string `yaml:"index"`
+}
+
+type Redis struct {
+	Host     string `yaml:"host"`
+	Port     string `yaml:"port"`
+	Password string `yaml:"password"`
 }
 
 func (c *ConfigFile) GetConfig() *ConfigFile {

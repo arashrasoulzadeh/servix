@@ -2,6 +2,7 @@ package servix
 
 import (
 	"fmt"
+	config "servix/config"
 
 	"github.com/go-redis/redis"
 )
@@ -9,10 +10,10 @@ import (
 var prefix = "servix_"
 
 func Database() *redis.Client {
+	redis_config := config.Parse().Redis
 	return redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
-		Password: "", // no password set
-		DB:       0,  // use default DB
+		Addr:     redis_config.Host + ":" + redis_config.Port,
+		Password: redis_config.Password, // no password set
 	})
 }
 func Set(key string, value string) {

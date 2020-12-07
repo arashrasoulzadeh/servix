@@ -1,4 +1,8 @@
 ---
+redis:
+  host: "localhost"
+  port: "6379"
+  password: ""
 config:
 - root: /Users/arashrasoulzadeh/Downloads/projects/servix/pages
   server: static
