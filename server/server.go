@@ -72,7 +72,7 @@ func FileServe(port string, path string, name string) error {
 	http.Handle("/", http.FileServer(fs))
 	ServerName = name
 	http.HandleFunc("/exporter", statsHandler)
-
+	fmt.Print("server ", name, " started at ", port)
 	return http.ListenAndServe(port, nil)
 
 }
