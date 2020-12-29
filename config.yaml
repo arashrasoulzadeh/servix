@@ -7,4 +7,5 @@ config:
 - root: /Users/arashrasoulzadeh/Downloads/projects/servix/pages
   server: static
   port: 9000
+  instances: 2
   index: "index.html"
