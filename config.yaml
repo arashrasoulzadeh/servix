@@ -4,7 +4,7 @@ redis:
   port: "6379"
   password: ""
 config:
-- root: /Users/arashrasoulzadeh/Downloads/projects/servix/pages
+- root: /mnt/hdd
   server: static
   port: 9000
   instances: 2
